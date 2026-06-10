@@ -1,0 +1,88 @@
+{
+  "name": "@daitai/vector",
+  "version": "0.1.0",
+  "description": "Algebraic vector format — replaces SVG with typed, composable primitives",
+  "license": "MIT",
+  "author": "Joakim Cöster <joakim@daitai.org>",
+  "homepage": "https://daitai.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daitai-org/vector"
+  },
+  "keywords": [
+    "vector", "svg", "canvas", "graphics", "algebraic", "deterministic",
+    "icons", "diagram", "daitai"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/types.js"
+    },
+    "./svg": {
+      "types": "./dist/compile-svg.d.ts",
+      "import": "./dist/compile-svg.js"
+    },
+    "./canvas": {
+      "types": "./dist/compile-canvas.d.ts",
+      "import": "./dist/compile-canvas.js"
+    },
+    "./icons": {
+      "types": "./dist/icons.d.ts",
+      "import": "./dist/icons.js"
+    },
+    "./parse": {
+      "types": "./dist/parse-svg.d.ts",
+      "import": "./dist/parse-svg.js"
+    },
+    "./converter": {
+      "types": "./dist/svg-converter.d.ts",
+      "import": "./dist/svg-converter.js"
+    },
+    "./edges": {
+      "types": "./dist/edge-helpers.d.ts",
+      "import": "./dist/edge-helpers.js"
+    },
+    "./markers": {
+      "types": "./dist/markers.d.ts",
+      "import": "./dist/markers.js"
+    },
+    "./labels": {
+      "types": "./dist/edge-labels.d.ts",
+      "import": "./dist/edge-labels.js"
+    },
+    "./decorations": {
+      "types": "./dist/decorations.d.ts",
+      "import": "./dist/decorations.js"
+    },
+    "./layout": {
+      "types": "./dist/layout.d.ts",
+      "import": "./dist/layout.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.0",
+    "vitest": "^3.2.0"
+  }
+}
